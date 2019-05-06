@@ -1,0 +1,27 @@
+<ion-view view-title="{{pageTitle}}">
+	<ion-nav-bar
+	class="bar-assertive-900"
+	align-title="center">
+		<ion-nav-back-button class="no-text"></ion-nav-back-button>
+		<ion-nav-buttons side="left">
+			<button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+			</button>
+		</ion-nav-buttons>
+	</ion-nav-bar>
+	<ion-content>
+		<div class="list card" ng-repeat="tweet in tweets">
+			<div class="item item-avatar">
+				<img src="{{tweet.user.profile_image_url}}">
+				<h2>{{tweet.user.name}}</h2>
+				<p>{{tweet.created_at | ukDate}}</p>
+			</div>
+			<div class="item item-body">
+				<a ng-show="{{tweet.entities.media[0].media_url}}" >
+					<img class="full-image" src="{{tweet.entities.media[0].media_url}}" />
+					<br />
+				</a>
+				<div ng-bind-html="tweet.text | linky:'_blank' | hrefToJS"></div>				
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

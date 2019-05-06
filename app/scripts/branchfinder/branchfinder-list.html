@@ -1,0 +1,74 @@
+<ion-view view-title="BSS Branch Finder">
+
+	 <ion-nav-buttons side="right">
+      <a style="margin-top:12px; margin-right:10px;" ui-sref="app.branchmap" class="button-clear">
+       <i class="ion-map"></i> Map View
+      </a>
+    </ion-nav-buttons>
+	<ion-content>
+
+		<ion-refresher pulling-text="Refresh..." on-refresh="doRefresh()">
+		</ion-refresher>
+		<div class="item item-text-wrap">
+				<p>Swipe left for Directions to Branch</p>
+				
+			</div>
+		
+		<ion-list>
+			<ion-item ng-repeat="branch in yelp.results" class=" item-text-wrap">
+				
+				<h2>{{branch.Branch}}</h2>
+
+				<p>
+					<span>
+						<i class="ion ion-ios-navigate"></i>
+						{{branch.Distance}}</span> away
+				</p>
+				<p>
+					<i class="ion ion-ios-location"></i>
+					{{branch.Address1}}<br>
+					<span ng-hide="branch.Address2  == null">{{branch.Address2}}<br></span>
+					{{branch.Address3}}<br>
+					{{branch.Postcode}}<br>
+				</p>
+				<p>
+					<span>
+						<i class="ion ion-android-watch"></i>
+						Opening Hours:<br>{{branch.OpeningHours}}</span>
+				</p>
+				<p>
+					<span>
+						<i class="ion ion-ios-email"></i>
+						Email Address: <a href="mailto:{{branch.BranchEmailAddress}}" target="_blank">{{branch.BranchEmailAddress}}</a>
+					</span>
+				</p>
+				
+				<p>
+					<span>
+						<i class="ion ion-archive"></i>
+						Fax Number: {{branch.BranchFax}}</span>
+				</p>
+				<p>
+					<span>
+						<i><br></i>
+						<a class="button icon-left ion-ios7-telephone button-assertive button-outline" ng-href="tel: {{branch.BranchTelephone}}"><i class="ion ion-ios-telephone"></i> Call {{branch.BranchTelephone}}</a>
+
+						 </span>
+				</p>
+				
+
+				<ion-option-button class="button-positive" ng-click="getDirections(branch)">
+					<i class="ion ion-map"></i>&nbsp;Directions
+				</ion-option-button>
+
+			</ion-item>
+		</ion-list>
+
+		<ion-infinite-scroll ng-if="yelp.hasMore" immediate-check="false" on-infinite="loadMore()">
+
+		</ion-infinite-scroll>
+
+
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,76 @@
+<ion-view view-title="BSS Branch Finder">
+ 
+	 <ion-nav-buttons side="right">
+      <a ui-sref="app.branchfinder" style="margin-top:12px; margin-right:10px;" class="button-clear">
+       <i class="ion-ios-list-outline"></i> List View
+      </a>
+    </ion-nav-buttons>
+    
+    
+	<ion-content scroll="false">
+
+		<map center="{{yelp.lat}}, {{yelp.lon}}"
+		     zoom="9"
+		     disable-default-u-i="false" style="height:100%;">
+
+			<marker
+					icon="images/me-marker.png"
+					position="{{[yelp.lat, yelp.lon]}}" >
+			</marker >
+
+			<marker
+					clickable="true"
+					on-mousedown="showBranchDetail(event, branch)"
+					ng-repeat="branch in yelp.results"
+					icon="images/coffee-marker.png"
+					position="{{[branch.Latitude, branch.Longitude]}}" >
+			</marker >
+
+			 <info-window
+					id="marker-info" >
+				<div ng-non-bindable="" >
+					<div class="contents" >
+						<h4 >{{yelp.branch.Branch}}</h4 >
+
+						<div class="row" >
+							<div class="col" >
+								<p class="address" >
+									<i class="ion ion-ios-location" ></i >
+									{{yelp.branch.Address1}}<br>
+					                <span ng-hide="branch.Address2  == null">{{yelp.branch.Address2}}<br></span>
+					                {{yelp.branch.Address3}}<br>
+					                {{yelp.branch.Postcode}}<br>
+								</p >
+								<p>
+					
+						
+						<i class="ion ion-ios-telephone"></i> Telephone {{yelp.branch.BranchTelephone}}
+
+						
+				</p>
+							</div >
+							<div class="col" >
+								<p class="distance" >
+									<i class="ion ion-ios-navigate" ></i >
+									{{yelp.branch.Distance}} away
+								</p >
+								<p>
+					<span>
+						<i class="ion ion-android-watch"></i>
+						Opening Hours:<br>{{yelp.branch.OpeningHours}}</span>
+				</p>
+							</div >
+						</div >
+
+						<div class="button button-small button-assertive"
+						     ng-click="getDirections(yelp.branch)" >Get Directions
+						</div >
+					</div >
+				</div >
+			</info-window >
+
+		</map >
+
+	</ion-content >
+    
+</ion-view>

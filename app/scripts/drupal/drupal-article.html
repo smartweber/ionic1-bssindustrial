@@ -1,0 +1,18 @@
+<ion-view view-title="{{vm.article.title}}">
+	<ion-nav-buttons side="right">
+		<button class="button button-clear icon ion-ios-upload-outline" ng-click="vm.share()"></button>
+	</ion-nav-buttons>
+
+	<ion-content class="has-header expanded">
+		<img class="block" ng-src="{{vm.article.image}}" />
+
+		<div class="mid-bar dark-bg z1 padding">
+			<h3>{{vm.article.title}}</h3>
+		</div>
+
+		<div class="content-inner">
+			<div ng-bind-html="vm.article.content"></div>
+			<!--<p class="categories">[{{vm.article.tags}}]</p>-->
+		</div>
+	</ion-content>
+</ion-view>

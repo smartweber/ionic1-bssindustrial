@@ -1,0 +1,17 @@
+{
+  "name": "BSS",
+  "app_id": "1b3d4ac3",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://feeder.shadowsvault.com/"
+    }
+  ],
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "12.41.296.5"
+    }
+  ]
+}

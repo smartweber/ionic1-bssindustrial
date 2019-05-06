@@ -1,0 +1,52 @@
+<ion-view view-title="{{pageTitle}}">
+	<ion-nav-bar
+		class="bar-assertive-900"
+		align-title="center">
+		<ion-nav-back-button class="no-text"></ion-nav-back-button>
+
+		<ion-nav-buttons side="left">
+			<button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+			</button>
+		</ion-nav-buttons>
+	</ion-nav-bar>
+	<ion-content class="form-login email-form">
+		<div class="content-padding">
+			<form name="loginForm" novalidate="" ng-submit="login(loginForm)">
+				<div class="form-caption text-center">
+					<div class="caption-image rewards"></div>
+					<h3>BSS Rewards</h3>
+				</div>
+				<div class="form-description">
+					Please sign in to check your BSS Rewards balance. This login is only for current Rewards Users.
+				</div>
+				<br><br>
+				<div class="list">
+					<label class="item item-input item-floating-label" ng-class="{ 'has-error' : loginForm.username.$invalid }">
+			          	<i class="icon ion-ios-person placeholder-icon"></i>
+			          	<span class="input-label">UserName</span>
+			          	<input type="text" name="username" placeholder="UserName" ng-model="formData.username" required>
+			        </label>
+			        <div class="form-error" ng-show="loginForm.username.$invalid && loginForm.$submitted" ng-message="required">
+						Please input username.
+					</div>
+					<label class="item item-input item-floating-label" ng-class="{ 'has-error' : loginForm.password.$invalid }">
+			          	<i class="icon ion-locked placeholder-icon"></i>
+			          	<span class="input-label">Password</span>
+			          	<input type="password" name="password" placeholder="password" ng-model="formData.password" required>
+			        </label>
+			        <div class="form-error" ng-show="loginForm.password.$invalid && loginForm.$submitted" ng-message="required">
+						Please input your password.
+					</div>
+				</div>
+				<div class="list align-bottom">
+					<label class="item btn-wrapper">
+						<button class="btn-form-submit">Login</button>
+					</label>
+					<!-- <label class="item">
+						You agree to the terms of service
+					</label> -->
+				</div>
+			</form>
+		</div>
+	</ion-content>
+</ion-view>

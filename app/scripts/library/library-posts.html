@@ -1,0 +1,44 @@
+<ion-view view-title="BSS PDF Library" id="libraries">
+	<ion-content class="has-header expanded">
+
+		<!-- <ion-list class="animate-fade-slide-in-right">
+			<ion-item
+				class="item-thumbnail-left item-text-wrap ink"
+				ng-repeat="article in vm.posts"
+				ng-click="vm.navigate(article.id)">
+				<img ng-src="{{article.image}}">
+				<h2>{{article.title}}</h2>
+				<p>{{article.brief | limitTo: 80 }}{{article.brief.length > 80 ? '...' : ''}}</p>
+			</ion-item>
+		</ion-list> -->
+		<label class = "item item-input item-select item-light">
+		   	<div class = "input-label">
+		      	Filter Catalogues
+		   	</div>
+		   	<select ng-options="category as category.name for category in vm.categories track by category.ID" ng-model="vm.category" ng-change="vm.categorySelected(vm.category)">
+		   		<option value="all">All</option>
+		   	</select>
+		</label>
+
+		<div class="list full">
+			<div class="wide item-text-wrap post" ng-repeat="p in vm.posts">
+				<div class="library-image">
+					<img class="full-image" ng-src="{{p.featured_image.guid}}">
+				</div>				
+				<ul class="library-detail">
+					<li class="library-title">
+						{{p.title}}
+					</li>
+					<li class="library-content">
+						Get more information about the drainage products that we supply
+					</li>
+					<li class="library-buttons">
+						<button class="btn-red-bg" ng-click="vm.view(p)">View</button>
+						<button class="btn-red-bg" ng-click="vm.download(p)">Download</button>
+					</li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

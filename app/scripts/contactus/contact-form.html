@@ -1,0 +1,65 @@
+<ion-view view-title="{{pageTitle}}">
+	<ion-nav-bar
+		class="bar-assertive-900"
+		align-title="center">
+		<ion-nav-back-button class="no-text"></ion-nav-back-button>
+
+		<ion-nav-buttons side="left">
+			<button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+			</button>
+		</ion-nav-buttons>
+	</ion-nav-bar>
+	<ion-content class="form-contact-us email-form">
+		<div class="content-padding">
+			<form name="contactForm" novalidate="" ng-submit="sendEmail(contactForm)">
+				<div class="form-caption text-center">
+					<div class="caption-image"></div>
+					<h3>Get A Quotation</h3>
+				</div>
+				<div class="form-description">
+					Get a Quotation from BSS. Please complete the form below, giving us as much detail of the items that you require.
+				</div>
+				<div class="list">
+					<label class="item item-input item-floating-label" ng-class="{ 'has-error' : contactForm.username.$invalid }">
+						<i class="icon ion-person placeholder-icon"></i>
+						<span class="input-label">Name</span>
+						<input type="text" name="username" placeholder="Name" ng-model="formData.name" required>
+					</label>
+					<div class="form-error" ng-show="contactForm.username.$invalid && contactForm.$submitted" ng-message="required">
+						This field is required.
+					</div>
+					<label class="item item-input item-floating-label" ng-class="{ 'has-error' : contactForm.email.$invalid }">
+			          	<i class="icon ion-ios-email placeholder-icon"></i>
+			          	<span class="input-label">Email</span>
+			          	<input type="email" name="email" placeholder="email" ng-model="formData.email" required>
+			        </label>
+			        <div class="form-error" ng-show="contactForm.email.$invalid && contactForm.$submitted" ng-message="email">
+						Please submit valid email.
+					</div>
+					<label class="item item-input item-floating-label" ng-class="{ 'has-error' : contactForm.telephone.$invalid }">
+						<i class="icon ion-ios-telephone placeholder-icon"></i>
+						<span class="input-label">Telephone</span>
+						<input type="text" name="telephone" placeholder="Telephone" ng-model="formData.telephone" required>
+					</label>
+					<div class="form-error" ng-show="contactForm.telephone.$invalid && contactForm.$submitted" ng-message="required">
+						This field is required.
+					</div>
+				</div>
+				<div class="list align-bottom">
+					<label class="item item-input item-floating-label" ng-class="{ 'has-error' : contactForm.message.$invalid }">
+						<i class="icon ion-ios-chatboxes-outline placeholder-icon"></i>
+						<span class="input-label">Message</span>
+						<input type="text" name="message" placeholder="Message" ng-model="formData.message" required>
+					</label>
+					<div class="form-error" ng-show="contactForm.message.$invalid && contactForm.$submitted" ng-message="required">
+						This field is required.
+					</div>
+					<label class="item btn-wrapper">
+						<button class="btn-form-submit">CONTACT BSS</button>
+						<!-- <button class="btn-form-submit" ng-click="sendEmail()">GET A QUOTATION</button> -->
+					</label>
+				</div>
+			</form>
+		</div>
+	</ion-content>
+</ion-view>

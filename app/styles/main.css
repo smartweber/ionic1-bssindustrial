@@ -1,0 +1,35 @@
+/* Your application styles go here */
+.library-image {
+	float: left;
+	width: 30%;
+}
+
+.library-detail {
+	float: right;
+	width: 65%;
+}
+
+.library-title {
+	font-size: 1.5em;
+	color: blue;
+}
+
+#libraries .post {
+	padding: 10px;
+}
+
+.library-content {
+	margin-top: 5px;
+}
+
+.library-buttons {
+	margin-top: 5px;
+}
+
+.library-buttons .btn-red-bg {
+	background-color: red;
+	color: white;
+	border-radius: 5px;
+	border: none;
+	padding: 5px 10px;
+}

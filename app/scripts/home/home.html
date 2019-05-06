@@ -1,0 +1,51 @@
+<ion-view view-title="Home">
+	<ion-content class="homepage">
+		<!-- <div class="home-hello">
+			<div class="item item-text-wrap">
+				<h1>BSS Industrial</h1>
+				
+			</div>
+		</div> -->
+		<!-- <div class="tabs tabs-dark tabs-icon-top static">
+			<a ng-click="vm.sendEmail()" class="tab-item">
+				<i class="icon ion-email"></i> Send email
+			</a>
+			<a ng-click="vm.getDirections()" class="tab-item">
+				<i class="icon ion-compass"></i> Find us
+			</a>
+			<a ng-click="vm.openFacebookPage()" class="tab-item">
+				<i class="icon ion-social-facebook"></i> Facebook
+			</a>
+		</div> -->
+
+		<!--
+		 | http://stackoverflow.com/questions/27239735/ionic-framwork-gridlayout-with-multiple-rows-and-column-on-which-buttons-placed
+		 | http://stackoverflow.com/questions/23779773/angularjs-loops-and-formatting/23780288#23780288
+		 -->
+		
+		 <div class="home-hello-card">
+		<div class="list">
+			<div ng-repeat="e in vm.entries" ng-if="$index%2==0" class="row animate-fade-slide-in-right">
+
+				<div class="card col home item">
+					<a class="item item-text-wrap" href="#/app/{{vm.entries[$index].path}}">
+						<h1><i class="icon {{vm.entries[$index].icon}}"></i></h1>
+						<h2>{{vm.entries[$index].title}}</h2>
+					</a>
+				</div>
+
+				<div class="card col home item">
+					<a class="item item-text-wrap" href="#/app/{{vm.entries[$index + 1].path}}">
+						<h1><i class="icon {{vm.entries[$index + 1].icon}}"></i></h1>
+						<h2>{{vm.entries[$index + 1].title}}</h2>
+					</a>
+				</div>
+
+			</div>
+		</div>
+		</div>
+	</ion-content>
+	 <a class="button button-fab button-fab-bottom-right button-assertive" href="tel:{{vm.phoneNumber}}">
+		<i class="icon ion-ios-telephone" style="vertical-align: middle;"></i>
+	</a>
+</ion-view>

@@ -1,0 +1,25 @@
+<ion-view view-title="Vimeo">
+	<ion-content class="has-header expanded">
+		<ion-refresher
+			pulling-text="Pull to refresh..."
+			on-refresh="vm.refresh()">
+		</ion-refresher>
+
+		<ion-list class="animate-fade-slide-in-right">
+			<ion-item
+				class="item-thumbnail-left item-text-wrap ink"
+				ng-repeat="video in vm.videos"
+				ng-click="vm.navigate(video)">
+				<img ng-src="{{video.thumb}}">
+				<h2>{{video.title}}</h2>
+				<p>{{video.description | limitTo: 80 }}{{video.description.length > 80 ? '...' : ''}}</p>
+			</ion-item>
+		</ion-list>
+
+		<ion-infinite-scroll
+			on-infinite="vm.loadMore()"
+			ng-if="vm.moreItemsAvailable"
+			distance="1%">
+		</ion-infinite-scroll>
+	</ion-content>
+</ion-view>

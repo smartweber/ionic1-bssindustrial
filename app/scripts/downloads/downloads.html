@@ -1,0 +1,37 @@
+<ion-view id="downloads" view-title="BSS Downloads">
+	<ion-content class="has-header expanded animate-fade-slide-in">
+		<ion-refresher
+			pulling-text="Pull to refresh..."
+			on-refresh="vm.doRefresh()">
+		</ion-refresher>
+
+		<div class="list half">
+			<div class="card card-gallery item item-text-wrap" ng-repeat="d in vm.downloads" ng-if="$index % 2 === 0">
+				<div class="ink dark-bg">
+					<h2>{{d.title}}</h2>
+					<img class="full-image" ng-src="{{d.thumb.src}}">
+				</div>
+				<div class="stable-bg dark">
+					<a class="item item-icon-left" href="#/app/download/{{d.id}}">
+						<i class="icon ion-arrow-right-c"></i>Read more
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="list half">
+			<div class="card card-gallery item item-text-wrap" ng-repeat="d in vm.downloads" ng-if="$index % 2 === 1">
+				<div class="ink dark-bg">
+					<h2>{{d.title}}</h2>
+					<img class="full-image" ng-src="{{d.thumb.src}}">
+				</div>
+				<div class="stable-bg dark">
+					<a class="item item-icon-left" href="#/app/download/{{d.id}}">
+						<i class="icon ion-arrow-right-c"></i>Read more
+					</a>
+				</div>
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,21 @@
+<ion-view view-title="Vimeo">
+	<ion-content class="has-header expanded">
+		<div class="video-container">
+			<iframe
+				ng-src="{{ vm.video.videoId | vimeoEmbedUrl }}"
+				frameborder="0"
+				webkitallowfullscreen
+				mozallowfullscreen
+				allowfullscreen>
+			</iframe>
+		</div>
+
+		<div class="mid-bar dark-bg z1 padding">
+			<h3>{{vm.video.title}}</h3>
+		</div>
+		
+		<div class="content-inner">
+			<p>{{vm.video.description}}</p>
+		</div>
+	</ion-content>
+</ion-view>

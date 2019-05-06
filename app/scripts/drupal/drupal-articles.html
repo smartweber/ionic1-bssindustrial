@@ -1,0 +1,58 @@
+<ion-view view-title="BSS News" id="news">
+	<ion-content class="has-header expanded">
+
+		<!-- <ion-list class="animate-fade-slide-in-right">
+			<ion-item
+				class="item-thumbnail-left item-text-wrap ink"
+				ng-repeat="article in vm.articles"
+				ng-click="vm.navigate(article.id)">
+				<img ng-src="{{article.image}}">
+				<h2>{{article.title}}</h2>
+				<p>{{article.brief | limitTo: 80 }}{{article.brief.length > 80 ? '...' : ''}}</p>
+			</ion-item>
+		</ion-list> -->
+
+		<div class="list full">
+			<div class="card wide card-gallery item item-text-wrap" ng-repeat="p in vm.articles" ng-if="$index % 3 === 0">
+				<div class="ink dark-bg">
+					<h2>{{p.title}}</h2> 
+					<a ng-click="vm.navigate(p.id)"><img class="full-image" ng-src="{{p.image}}"></a>
+				</div>
+				<div class="stable-bg dark">
+					<a class="item item-icon-left" ng-click="vm.navigate(p.id)">
+						<i class="icon ion-arrow-right-c"></i>Read more
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="list half">
+			<div class="card card-gallery item item-text-wrap" ng-repeat="p in vm.articles" ng-if="$index % 3 === 1">
+				<div class="ink dark-bg">
+					<h2>{{p.title}}</h2>
+					<a ng-click="vm.navigate(p.id)"><img class="full-image" ng-src="{{p.image}}"></a>
+				</div>
+				<div class="stable-bg dark">
+					<a class="item item-icon-left" href="#/app/product/{{p.id}}">
+						<i class="icon ion-arrow-right-c"></i>Read more
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="list half">
+			<div class="card card-gallery item item-text-wrap" ng-repeat="p in vm.articles" ng-if="$index % 3 === 2">
+				<div class="ink dark-bg">
+					<h2>{{p.title}}</h2>
+					<a ng-click="vm.navigate(p.id)"><img class="full-image" ng-src="{{p.image}}"></a>
+				</div>
+				<div class="stable-bg dark">
+					<a class="item item-icon-left" ng-click="vm.navigate(p.id)">
+						<i class="icon ion-arrow-right-c"></i>Read more
+					</a>
+				</div>
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

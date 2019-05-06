@@ -1,0 +1,43 @@
+<ion-view view-title="{{pageTitle}}">
+	<ion-nav-bar
+		class="bar-assertive-900"
+		align-title="center">
+		<ion-nav-back-button class="no-text"></ion-nav-back-button>
+
+		<ion-nav-buttons side="left">
+			<button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+			</button>
+		</ion-nav-buttons>
+	</ion-nav-bar>
+	<ion-content class="form-rewards email-form">
+		<div class="content-padding">
+			<form name="rewardsForm" novalidate="" ng-submit="logOut()">
+				<div class="form-caption text-center">
+					<div class="caption-image rewards"></div>
+					<h3>BSS Rewards</h3>
+				</div>
+				<div class="company-caption">
+					<div>
+						<strong>{{ userName }}</strong>
+					</div>
+					<div>
+						<strong>{{ companyName }}</strong>
+					</div>
+				</div>
+				<div class="account-number">
+					Account Number: {{ accountNumber }}
+				</div>
+				<div class="content" ng-bind-html="resultStr">
+				</div>
+				<div class="list align-bottom">
+					<label class="item btn-wrapper">
+						<button class="btn-form-submit">Logout</button>
+					</label>
+					<!-- <label class="item">
+						You agree to the terms of service
+					</label> -->
+				</div>
+			</form>
+		</div>
+	</ion-content>
+</ion-view>

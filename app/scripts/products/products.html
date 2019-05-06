@@ -1,0 +1,51 @@
+<ion-view id="products" view-title="Our Services">
+	<ion-content class="has-header expanded animate-fade-slide-in">
+		<ion-refresher
+			pulling-text="Pull to refresh..."
+			on-refresh="vm.doRefresh()">
+		</ion-refresher>
+
+		<div class="list full">
+			<div class="card wide card-gallery item item-text-wrap" ng-repeat="p in vm.products" ng-if="$index % 3 === 0">
+				<div class="ink dark-bg">
+					<h2>{{p.title}}</h2>
+					<a href="#/app/product/{{p.id}}"><img class="full-image" ng-src="{{p.thumb.src}}"></a>
+				</div>
+				<div class="stable-bg dark">
+					<a class="item item-icon-left" href="#/app/product/{{p.id}}">
+						<i class="icon ion-arrow-right-c"></i>Read more
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="list half">
+			<div class="card card-gallery item item-text-wrap" ng-repeat="p in vm.products" ng-if="$index % 3 === 1">
+				<div class="ink dark-bg">
+					<h2>{{p.title}}</h2>
+					<a href="#/app/product/{{p.id}}"><img class="full-image" ng-src="{{p.thumb.src}}"></a>
+				</div>
+				<div class="stable-bg dark">
+					<a class="item item-icon-left" href="#/app/product/{{p.id}}">
+						<i class="icon ion-arrow-right-c"></i>Read more
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="list half">
+			<div class="card card-gallery item item-text-wrap" ng-repeat="p in vm.products" ng-if="$index % 3 === 2">
+				<div class="ink dark-bg">
+					<h2>{{p.title}}</h2>
+					<a href="#/app/product/{{p.id}}"><img class="full-image" ng-src="{{p.thumb.src}}"></a>
+				</div>
+				<div class="stable-bg dark">
+					<a class="item item-icon-left" href="#/app/product/{{p.id}}">
+						<i class="icon ion-arrow-right-c"></i>Read more
+					</a>
+				</div>
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

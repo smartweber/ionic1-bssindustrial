@@ -1,0 +1,19 @@
+<ion-view view-title="{{vm.product.title}}">
+	<ion-content class="has-header expanded">
+
+		<ion-slide-box>
+			<ion-slide class="product-slide" ng-repeat="pic in vm.product.pictures">
+				<div class="box blue"><img class="block" ng-src="{{pic.src}}"/></div>
+			</ion-slide>
+		</ion-slide-box>
+
+		<div class="mid-bar dark-bg z1 padding">
+			<h3>{{vm.product.title}}</h3>
+			
+		</div>
+
+		<div class="content-inner">
+			<p compile="vm.product.body"></p>
+		</div>
+	</ion-content>
+</ion-view>

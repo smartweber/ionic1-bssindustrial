@@ -1,0 +1,52 @@
+<ion-view view-title="{{pageTitle}}">
+	<ion-nav-bar
+		class="bar-assertive-900"
+		align-title="center">
+		<ion-nav-back-button class="no-text"></ion-nav-back-button>
+
+		<ion-nav-buttons side="left">
+			<button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+			</button>
+		</ion-nav-buttons>
+	</ion-nav-bar>
+	<ion-content class="form-newsletter email-form">
+		<div class="content-padding">
+			<form name="newsForm" novalidate="" ng-submit="sendEmail(newsForm)">
+				<div class="form-caption text-center">
+					<div class="caption-image"></div>
+					<h3>BSS Newsletters</h3>
+				</div>
+				<div class="form-description">
+					BSS news and special offers, new product developments, and all the information you need to keep you ahead of the curve. <br><br>
+					Get Connected.
+				</div>
+				<div class="list">
+					<label class="item item-input item-floating-label" ng-class="{ 'has-error' : newsForm.username.$invalid }">
+						<i class="icon ion-person placeholder-icon"></i>
+						<span class="input-label">Name</span>
+						<input type="text" name="username" placeholder="Name" ng-model="formData.name" required>
+					</label>
+					<div class="form-error" ng-show="newsForm.username.$invalid && newsForm.$submitted" ng-message="required">
+						This field is required.
+					</div>
+					<label class="item item-input item-floating-label" ng-class="{ 'has-error' : newsForm.email.$invalid }">
+			          	<i class="icon ion-ios-email placeholder-icon"></i>
+			          	<span class="input-label">Email</span>
+			          	<input type="email" name="email" placeholder="email" ng-model="formData.email" required>
+			        </label>
+			        <div class="form-error" ng-show="newsForm.email.$invalid && newsForm.$submitted" ng-message="email">
+						Please submit valid email.
+					</div>
+				</div>
+				<div class="list align-bottom">
+					<label class="item btn-wrapper">
+						<button class="btn-form-submit">SIGN UP</button>
+					</label>
+					<!-- <label class="item">
+						You agree to the terms of service
+					</label> -->
+				</div>
+			</form>
+		</div>
+	</ion-content>
+</ion-view>

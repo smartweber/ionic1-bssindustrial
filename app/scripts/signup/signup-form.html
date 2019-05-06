@@ -1,0 +1,73 @@
+
+<ion-view view-title="{{pageTitle}}">
+	<ion-nav-bar
+		class="bar-assertive-900"
+		align-title="center">
+		<ion-nav-back-button class="no-text"></ion-nav-back-button>
+
+		<ion-nav-buttons side="left">
+			<button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+			</button>
+		</ion-nav-buttons>
+	</ion-nav-bar>
+	<ion-content class="form-signup email-form">
+		<div class="content-padding">
+			<form name="signupForm" novalidate="" ng-submit="sendEmail(signupForm)">
+				<div class="form-caption text-center">
+					<div class="caption-image"></div>
+					<h3>Request an Account</h3>
+				</div>
+				<div class="form-description">
+					Get in touch with us to get information about opening a BSS Account.
+				</div>
+				<div class="list">
+					<label class="item item-input item-floating-label" ng-class="{ 'has-error' : signupForm.username.$invalid }">
+						<i class="icon ion-person placeholder-icon"></i>
+						<span class="input-label">Name</span>
+						<input type="text" name="username" placeholder="Name" ng-model="formData.name" required>
+					</label>
+					<div class="form-error" ng-show="signupForm.username.$invalid && signupForm.$submitted" ng-message="required">
+						This field is required.
+					</div>
+					<label class="item item-input item-floating-label" ng-class="{ 'has-error' : signupForm.email.$invalid }">
+			          	<i class="icon ion-ios-email placeholder-icon"></i>
+			          	<span class="input-label">Email</span>
+			          	<input type="text" name="email" placeholder="email" ng-model="formData.email" required>
+			        </label>
+			        <div class="form-error" ng-show="signupForm.email.$invalid && signupForm.$submitted" ng-message="required">
+						This field is required.
+					</div>
+					<label class="item item-input item-floating-label" ng-class="{ 'has-error' : signupForm.telephone.$invalid }">
+						<i class="icon ion-ios-telephone placeholder-icon"></i>
+						<span class="input-label">Telephone</span>
+						<input type="text" name="telephone" placeholder="Telephone" ng-model="formData.telephone" required>
+					</label>
+					<div class="form-error" ng-show="signupForm.telephone.$invalid && signupForm.$submitted" ng-message="required">
+						This field is required.
+					</div>
+					<label class="item item-input item-floating-label" ng-class="{ 'has-error' : signupForm.company.$invalid }">
+						<i class="icon ion-ios-person-outline placeholder-icon"></i>
+						<span class="input-label">Company</span>
+						<input type="text" name="company" placeholder="Company" ng-model="formData.company" required>
+					</label>
+					<div class="form-error" ng-show="signupForm.company.$invalid && signupForm.$submitted" ng-message="required">
+						This field is required.
+					</div>
+				</div>
+				<div class="list align-bottom">
+					<label class="item item-input item-floating-label" ng-class="{ 'has-error' : signupForm.message.$invalid }">
+						<i class="icon ion-ios-chatboxes-outline placeholder-icon"></i>
+						<span class="input-label">Message</span>
+						<input type="text" name="message" placeholder="Message" ng-model="formData.message" required>
+					</label>
+					<div class="form-error" ng-show="signupForm.message.$invalid && signupForm.$submitted" ng-message="required">
+						This field is required.
+					</div>
+					<label class="item btn-wrapper">
+						<button class="btn-form-submit">REQUEST AN ACCOUNT</button>
+					</label>
+				</div>
+			</form>
+		</div>
+	</ion-content>
+</ion-view>
